@@ -67,7 +67,7 @@ function helloWorld() {
 }
 var mens = "🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅";
 var effect = "｜｜｜｜｜｜｜｜｜｜｜｜｜";
-var jumpNum = 4;
+var jumpNum = 8;
 function getJumpCode(jump) {
     var jumpCode = "";
     if (jump) {
