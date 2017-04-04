@@ -2,7 +2,7 @@ html,body {
   height: 100%;
 }
 body {
-  background-color: #ccc;
+  background-color: blue;
 }
 .wrapper {
   display: flex;
