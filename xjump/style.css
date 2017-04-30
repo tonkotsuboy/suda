@@ -2,8 +2,8 @@ html,body {
   height: 100%;
 }
 body {
-  background-color: blue;
 }
+
 .wrapper {
   display: flex;
   justify-content: center;

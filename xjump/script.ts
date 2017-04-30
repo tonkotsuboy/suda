@@ -21,7 +21,7 @@ const mens:string = "🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅🙅";
 
 const effect:string = "｜｜｜｜｜｜｜｜｜｜｜｜｜";
 
-var jumpNum:number = 7;
+var jumpNum:number = 2;
 
 function getJumpCode(jump:boolean):string {
   let jumpCode:string = "";
