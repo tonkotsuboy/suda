@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <title>すだころがし</title>
+  </head>
+  <body>
+    <script src="three.js"></script>
+    <script>
+      var init = function(){
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize( 800, 600 );
+        renderer.setClearColor( 0xffffff, 1.0);
+        document.body.appendChild( renderer.domElement );
+
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera( 45, 800 / 600, 1, 1000 );
+        var geometry = new THREE.BoxGeometry( 80, 80, 80 );
+        var texture = new THREE.TextureLoader().load( 'suda.png' );
+        var texture2 = new THREE.TextureLoader().load( 'suda2.png' );
+        var material = new THREE.MeshPhongMaterial({ map: texture});
+        var material2 = new THREE.MeshPhongMaterial({ map: texture2});
+        var box = new THREE.Mesh( geometry, material );
+        var box2 = new THREE.Mesh( geometry, material2 );
+        box.position.z = -5;
+        camera.position.z = 500;
+
+        scene.add( box );
+        scene.add( box2 );
+
+        var light = new THREE.AmbientLight( 0xffffff, 1.0 );
+        light.position.set( 1, 0, 1 ).normalize();
+
+        scene.add( light ); renderer.render( scene, camera );
+
+
+        var moveX = 3;
+        var moveY = 3;
+        var update = function(){
+          requestAnimationFrame( update );
+          box.rotation.x += 0.03;
+          box.rotation.y += 0.03;
+          box.position.x += moveX;
+          box.position.y += moveY;
+          if( Math.abs( box.position.x ) > 210 ) moveX *= -1;
+          if( Math.abs( box.position.y ) > 140 ) moveY *= -1;
+          renderer.render( scene, camera );
+        };
+        update();
+
+        var moveX2 = 2;
+        var moveY2 = 2;
+        var update2 = function(){
+          requestAnimationFrame( update2 );
+          box2.rotation.x += 0.03;
+          box2.rotation.y += 0.03;
+          box2.position.x -= moveX2;
+          box2.position.y -= moveY2;
+          if( Math.abs( box2.position.x ) > 210 ) moveX2 *= -1;
+          if( Math.abs( box2.position.y ) > 140 ) moveY2 *= -1;
+          renderer.render( scene, camera );
+        };
+        update2();
+
+      };
+      window.addEventListener( 'DOMContentLoaded', init );
+      </script>
+  </body>
+</html>
