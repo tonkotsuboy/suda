@@ -16,10 +16,12 @@
         var scene = new THREE.Scene();
         var camera = new THREE.PerspectiveCamera( 45, 800 / 600, 1, 1000 );
         var geometry = new THREE.BoxGeometry( 80, 80, 80 );
-        var texture = new THREE.TextureLoader().load( 'suda.png' );
-        var texture2 = new THREE.TextureLoader().load( 'suda2.png' );
-        var material = new THREE.MeshPhongMaterial({ map: texture});
-        var material2 = new THREE.MeshPhongMaterial({ map: texture2});
+        var texture = new THREE.TextureLoader();
+        var texture2 = new THREE.TextureLoader();
+        var tex = texture.load( 'suda.jpg' );
+        var tex2 = texture.load( 'suda2.jpg' );
+        var material = new THREE.MeshPhongMaterial({ map: tex});
+        var material2 = new THREE.MeshPhongMaterial({ map: tex2});
         var box = new THREE.Mesh( geometry, material );
         var box2 = new THREE.Mesh( geometry, material2 );
         box.position.z = -5;
@@ -36,15 +38,19 @@
 
         var moveX = 3;
         var moveY = 3;
+        var moveZ = 4;
         var update = function(){
           requestAnimationFrame( update );
           box.rotation.x += 0.03;
           box.rotation.y += 0.03;
           box.position.x += moveX;
           box.position.y += moveY;
+          box.position.z += moveZ;
           if( Math.abs( box.position.x ) > 210 ) moveX *= -1;
           if( Math.abs( box.position.y ) > 140 ) moveY *= -1;
+          if( Math.abs( box.position.z ) > 300 ) moveZ *= -1;
           renderer.render( scene, camera );
+          console.log(box.position.z);
         };
         update();
 
