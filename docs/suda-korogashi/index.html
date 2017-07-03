@@ -17,7 +17,6 @@
         var camera = new THREE.PerspectiveCamera( 45, 800 / 600, 1, 1000 );
         var geometry = new THREE.BoxGeometry( 80, 80, 80 );
         var texture = new THREE.TextureLoader();
-        var texture2 = new THREE.TextureLoader();
         var tex = texture.load( 'suda.jpg' );
         var tex2 = texture.load( 'suda2.jpg' );
         var material = new THREE.MeshPhongMaterial({ map: tex});
@@ -50,7 +49,6 @@
           if( Math.abs( box.position.y ) > 140 ) moveY *= -1;
           if( Math.abs( box.position.z ) > 300 ) moveZ *= -1;
           renderer.render( scene, camera );
-          console.log(box.position.z);
         };
         update();
 
