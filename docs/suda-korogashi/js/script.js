@@ -37,9 +37,6 @@ class SudaKorogashi {
   render() {
     this.renderer.render(this.scene, this.camera);
 
-    var moveX2 = 1;
-    var moveY2 = 1;
-
     for (let i = 0; i < this.sudaNum; i++) {
       const suda = this.sudaList[i];
 
@@ -86,6 +83,5 @@ class Suda {
     this.vr2 = (Math.random() - 0.5) * 3;
   }
 }
-
 
 window.addEventListener("DOMContentLoaded", new SudaKorogashi());
