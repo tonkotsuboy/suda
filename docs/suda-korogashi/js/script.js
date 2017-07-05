@@ -2,7 +2,7 @@ class SudaKorogashi {
 
   constructor() {
     // スダの数
-    this.sudaNum = 10;
+    this.sudaNum = 40;
     this.sudaList = [];
 
     this.canvasWidth = window.innerWidth;
