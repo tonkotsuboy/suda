@@ -2,8 +2,9 @@
   margin: 0;
   padding: 0;
 }
+
 html, body {
-  width:100%;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
@@ -12,4 +13,32 @@ body {
   background-image: url(../images/sudabg.jpg);
   background-position: 50% 50%;
   background-size: cover;
+}
+
+#sudaBG {
+  position: absolute;
+  top: calc(50% - 60vw);
+  left: calc(50% - 60vw);
+  width: 120vw;
+  height: 120vw;
+  background-image: url(../images/sudabg.jpg);
+  background-position: 50% 50%;
+  background-size: cover;
+  animation: rotate 5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+#sudaLayer {
+  position: relative;
 }

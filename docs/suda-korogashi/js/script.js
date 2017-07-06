@@ -8,12 +8,20 @@ class SudaKorogashi {
     this.canvasWidth = window.innerWidth;
     this.canvasHeight = window.innerHeight;
 
+    console.log(this.canvasWidth)
+    console.log(this.canvasHeight)
+
     this.near = 1;
     this.far = 1000;
 
     this.renderer = new THREE.WebGLRenderer({ alpha: true });
     this.renderer.setSize(this.canvasWidth, this.canvasHeight);
-    document.body.appendChild(this.renderer.domElement);
+
+    const sudaLayer = document.getElementById("sudaLayer");
+
+    console.log(sudaLayer)
+
+    sudaLayer.appendChild(this.renderer.domElement);
 
     this.scene = new THREE.Scene();
     this.camera = new THREE.PerspectiveCamera(45, this.canvasWidth / this.canvasHeight, this.near, this.far);
@@ -86,10 +94,12 @@ class Suda {
     this.vy = (Math.random() - 0.5) * 20;
     this.vz = (Math.random() - 0.5) * 20;
 
-    this.vr1 = (Math.random() - 0.5) * 2;
-    this.vr2 = (Math.random() - 0.5) * 2;
-    this.vr3 = (Math.random() - 0.5) * 2;
+    this.vr1 = (Math.random() - 0.5) * 1.2;
+    this.vr2 = (Math.random() - 0.5) * 1.2;
+    this.vr3 = (Math.random() - 0.5) * 1.2;
   }
 }
 
-window.addEventListener("DOMContentLoaded", new SudaKorogashi());
+document.addEventListener("DOMContentLoaded", () => {
+  new SudaKorogashi();
+});
