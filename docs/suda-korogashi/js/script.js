@@ -2,7 +2,7 @@ class SudaKorogashi {
 
   constructor() {
     // スダの数
-    this.sudaNum = 40;
+    this.sudaNum = 60;
     this.sudaList = [];
 
     this.canvasWidth = window.innerWidth;
@@ -11,9 +11,8 @@ class SudaKorogashi {
     this.near = 1;
     this.far = 1000;
 
-    this.renderer = new THREE.WebGLRenderer();
+    this.renderer = new THREE.WebGLRenderer({ alpha: true });
     this.renderer.setSize(this.canvasWidth, this.canvasHeight);
-    this.renderer.setClearColor(0xffffff, 1.0);
     document.body.appendChild(this.renderer.domElement);
 
     this.scene = new THREE.Scene();
@@ -46,6 +45,7 @@ class SudaKorogashi {
 
       suda.view.rotation.x += suda.vr1;
       suda.view.rotation.y += suda.vr2;
+      suda.view.rotation.z += suda.vr3;
 
       if (Math.abs(suda.view.position.x) > this.canvasWidth / 2) suda.vx *= -1;
       if (Math.abs(suda.view.position.y) > this.canvasHeight / 2) suda.vy *= -1;
@@ -81,6 +81,7 @@ class Suda {
 
     this.vr1 = (Math.random() - 0.5) * 3;
     this.vr2 = (Math.random() - 0.5) * 3;
+    this.vr3 = (Math.random() - 0.5) * 3;
   }
 }
 
