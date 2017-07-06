@@ -94,9 +94,9 @@ class Suda {
     this.vy = (Math.random() - 0.5) * 20;
     this.vz = (Math.random() - 0.5) * 20;
 
-    this.vr1 = (Math.random() - 0.5) * 1.2;
-    this.vr2 = (Math.random() - 0.5) * 1.2;
-    this.vr3 = (Math.random() - 0.5) * 1.2;
+    this.vr1 = (Math.random() - 0.5) * 0.3;
+    this.vr2 = (Math.random() - 0.5) * 0.3;
+    this.vr3 = (Math.random() - 0.5) * 0.3;
   }
 }
 
