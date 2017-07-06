@@ -67,7 +67,14 @@ class Suda {
 
   constructor() {
     const textureLoader = new THREE.TextureLoader();
-    const imagePath = Math.random() > 0.5 ? "suda.jpg" : "suda2.jpg";
+
+    const random = Math.random();
+
+    let imagePath;
+
+    if (random > 2 / 3) imagePath = "suda.jpg";
+    else if (random > 1 / 3) imagePath = "suda2.jpg";
+    else imagePath = "suda3.jpg";
 
     const texture = textureLoader.load(imagePath);
     const geometry = new THREE.BoxGeometry(80, 80, 80);
@@ -79,9 +86,9 @@ class Suda {
     this.vy = (Math.random() - 0.5) * 20;
     this.vz = (Math.random() - 0.5) * 20;
 
-    this.vr1 = (Math.random() - 0.5) * 3;
-    this.vr2 = (Math.random() - 0.5) * 3;
-    this.vr3 = (Math.random() - 0.5) * 3;
+    this.vr1 = (Math.random() - 0.5) * 2;
+    this.vr2 = (Math.random() - 0.5) * 2;
+    this.vr3 = (Math.random() - 0.5) * 2;
   }
 }
 
