@@ -32,7 +32,7 @@ class SudaKorogashi {
 
     this.resize();
     window.addEventListener("resize", () => this.resize());
-    
+    window.addEventListener("orientationchange", () => this.resize());
     this.render();
   }
 
