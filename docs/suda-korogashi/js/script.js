@@ -5,21 +5,13 @@ class SudaKorogashi {
     this.sudaNum = 60;
     this.sudaList = [];
 
-    this.canvasWidth = window.innerWidth;
-    this.canvasHeight = window.innerHeight;
-
-    console.log(this.canvasWidth)
-    console.log(this.canvasHeight)
 
     this.near = 1;
     this.far = 1000;
 
-    this.renderer = new THREE.WebGLRenderer({ alpha: true });
-    this.renderer.setSize(this.canvasWidth, this.canvasHeight);
+    this.renderer = new THREE.WebGLRenderer({alpha: true});
 
     const sudaLayer = document.getElementById("sudaLayer");
-
-    console.log(sudaLayer)
 
     sudaLayer.appendChild(this.renderer.domElement);
 
@@ -38,6 +30,9 @@ class SudaKorogashi {
     light.position.set(1, 0, 1).normalize();
     this.scene.add(light);
 
+    this.resize();
+    window.addEventListener("resize", () => this.resize());
+    
     this.render();
   }
 
@@ -68,6 +63,14 @@ class SudaKorogashi {
 
     requestAnimationFrame(() => this.render());
 
+  }
+
+  resize() {
+    this.canvasWidth = window.innerWidth;
+    this.canvasHeight = window.innerHeight;
+    this.renderer.setSize(this.canvasWidth, this.canvasHeight);
+    this.camera.aspect = this.canvasWidth / this.canvasHeight;
+    this.camera.updateProjectionMatrix();
   }
 }
 
