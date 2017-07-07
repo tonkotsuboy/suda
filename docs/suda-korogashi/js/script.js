@@ -36,8 +36,13 @@ class SudaKorogashi {
     this.scene.add(light);
 
     this.resize();
-    window.addEventListener("resize", () => this.resize());
-    window.addEventListener("orientationchange", () => this.resize());
+
+    if (!this.mobile) {
+      window.addEventListener("resize", () => this.resize());
+    }
+    else {
+      window.addEventListener("orientationchange", () => this.resize());
+    }
     this.render();
   }
 
@@ -71,10 +76,8 @@ class SudaKorogashi {
   }
 
   resize() {
-    // this.canvasWidth = this.mobile ? document.documentElement.clientWidth : window.innerWidth;
-    // this.canvasHeight = this.mobile ? document.documentElement.clientHeight : window.innerHeight;
-    this.canvasWidth = document.documentElement.clientWidth;
-    this.canvasHeight = document.documentElement.clientHeight;
+    this.canvasWidth = this.mobile ? document.documentElement.clientWidth : window.innerWidth;
+    this.canvasHeight = this.mobile ? document.documentElement.clientHeight : window.innerHeight;
     this.renderer.setSize(this.canvasWidth, this.canvasHeight);
     this.camera.aspect = this.canvasWidth / this.canvasHeight;
     this.camera.updateProjectionMatrix();
