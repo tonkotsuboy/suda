@@ -1,6 +1,11 @@
 class SudaKorogashi {
 
   constructor() {
+
+    const ua = navigator.userAgent;
+    this.mobile = ua.indexOf("iPhone") > 0 || ua.indexOf("iPad") == -1 || ua.indexOf("iPod") > 0 || ua.indexOf("Android") > 0;
+
+
     // スダの数
     this.sudaNum = 60;
     this.sudaList = [];
@@ -66,8 +71,8 @@ class SudaKorogashi {
   }
 
   resize() {
-    this.canvasWidth = window.innerWidth;
-    this.canvasHeight = window.innerHeight;
+    this.canvasWidth = this.mobile ? window.screen.width : window.innerWidth;
+    this.canvasHeight = this.mobile ? window.screen.height : window.innerHeight;
     this.renderer.setSize(this.canvasWidth, this.canvasHeight);
     this.camera.aspect = this.canvasWidth / this.canvasHeight;
     this.camera.updateProjectionMatrix();
