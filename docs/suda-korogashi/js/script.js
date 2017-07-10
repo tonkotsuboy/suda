@@ -91,7 +91,7 @@ class Suda {
 
     let imagePath;
 
-    if (random > 2 / 3) imagePath = "suda.jpg";
+    if (random > 2 / 3) imagePath = "suda4.jpg";
     else if (random > 1 / 3) imagePath = "suda2.jpg";
     else imagePath = "suda3.jpg";
 
