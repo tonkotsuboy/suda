@@ -20,7 +20,7 @@ async function main() {
   }
 
   // 全世界同時バージョン
-  addEventListener("click", () => {
+  addEventListener("touchstart", () => {
     likeList.forEach((likeContainer) => {
       likeContainer.classList.toggle("clicked");
     })
