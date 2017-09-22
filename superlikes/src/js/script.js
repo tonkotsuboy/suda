@@ -41,7 +41,7 @@ class SuperLikes {
 
   addEvents() {
     // イベント設定
-    //window.addEventListener("click", () => this.onClick());
+    window.addEventListener("click", () => this.onClick());
     window.addEventListener("touchstart", () => this.onClick());
   }
 
