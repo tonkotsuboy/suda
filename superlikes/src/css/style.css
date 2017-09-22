@@ -45,6 +45,13 @@ h1 {
   grid-template-columns: repeat(auto-fit, calc(100% / 8));
 }
 
+@media screen and (orientation: portrait) {
+  #container {
+    grid-template-rows: repeat(auto-fit, calc(100% / 8));
+    grid-template-columns: repeat(auto-fit, calc(100% / 5));
+  }
+}
+
 #container > .likeContainer {
   width: 100%;
   height: 100%;
