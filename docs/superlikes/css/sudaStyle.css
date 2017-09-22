@@ -89,10 +89,12 @@ h1, p {
 
 .likeButton .heart {
   fill: rgba(6, 6, 6, 0.24);
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
+  -webkit-transform: scale(0.4);
+  transform: scale(0.4);
   -webkit-transform-origin: 250px 250px;
   transform-origin: 250px 250px;
+  -webkit-filter: grayscale(100);
+  filter: grayscale(100);
 }
 
 .clicked .likeButton .explosion {
@@ -1038,7 +1040,12 @@ h1, p {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
-    fill: #E2264D;
+    -webkit-filter: grayscale(100);
+    filter: grayscale(100);
+  }
+  2% {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
   39% {
     -webkit-transform: scale(0);
@@ -1071,7 +1078,12 @@ h1, p {
   0% {
     -webkit-transform: scale(0);
     transform: scale(0);
-    fill: #E2264D;
+    -webkit-filter: grayscale(100);
+    filter: grayscale(100);
+  }
+  2% {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
   }
   39% {
     -webkit-transform: scale(0);
@@ -1104,4 +1116,8 @@ body {
   background-color: #f7f7f7;
 }
 
-/*# sourceMappingURL=style.css.map */
+h1 {
+  bottom: 30px;
+}
+
+/*# sourceMappingURL=sudaStyle.css.map */

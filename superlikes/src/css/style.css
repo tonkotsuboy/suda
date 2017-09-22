@@ -26,7 +26,7 @@ body {
   overflow: hidden;
 }
 
-h1 {
+h1, p {
   position: absolute;
   bottom: 0;
   right: 0;
