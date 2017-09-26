@@ -35,7 +35,6 @@ class SuperLikes {
   }
 
   addLikeButtons(likeButtonCode) {
-
     const container = document.getElementById("container");
 
     const likeContainerMaster = document.createElement("div");
@@ -69,23 +68,23 @@ class SuperLikes {
     });
 
     if (this.isOn) {
-      this.likeList.forEach((likeContainer, i) => {
+      this.likeList.forEach((likeContainer) => {
         likeContainer.classList.remove("clicked");
       });
     }
     else {
-
       this.timerList = [];
+
       createjs.Sound.play("sound");
 
       this.likeList.forEach((likeContainer, i) => {
         const timer = setTimeout(() => {
           likeContainer.classList.add("clicked");
-
           if (i % 2 === 0) {
             createjs.Sound.play("sound");
           }
         }, i * 100);
+
         this.timerList.push(timer);
       });
     }
