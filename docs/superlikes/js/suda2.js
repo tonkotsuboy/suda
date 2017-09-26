@@ -90,7 +90,7 @@ class SuperLikes {
         const timer = setTimeout(() => {
           likeContainer.classList.add("clicked");
 
-          if (i % 2 == 0) {
+          if (i % 2 === 0) {
             createjs.Sound.play("sound");
           }
         }, i * 100);
@@ -103,27 +103,3 @@ class SuperLikes {
 }
 
 new SuperLikes();
-
-/*
-var context = new AudioContext();
-var buffer = null;
-var source = context.createBufferSource();
-
-var request = new XMLHttpRequest();
-request.open('GET', 'mp3/jump04.mp3', true);
-request.responseType = 'arraybuffer';
-request.send();
-
-request.onload = function () {
-  var res = request.response;
-  context.decodeAudioData(res, function (buf) {
-    source.buffer = buf;
-  });
-};
-
-source.connect(context.destination);
-source.start(0);
-*/
-
-
-// music by http://taira-komori.jpn.org/game01.html
