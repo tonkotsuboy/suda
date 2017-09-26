@@ -1,19 +1,17 @@
 class SuperLikes {
   constructor() {
-    this.init();
     this.likeList = [];
     this.timerList = [];
+
+    this.init();
     this.isOn = false;
   }
 
-  async init() {
-    return Promise.all([
+  init() {
+    Promise.all([
       this.fetchSource(),
       this.loadSe()
     ])
-      .then(() => {
-        console.log("owata");
-      });
   }
 
   async fetchSource() {
