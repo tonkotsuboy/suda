@@ -2,16 +2,16 @@ class SuperLikes {
   constructor() {
     this.likeList = [];
     this.timerList = [];
+    this.isOn = false;
 
     this.init();
-    this.isOn = false;
   }
 
   init() {
     Promise.all([
       this.fetchSource(),
       this.loadSe()
-    ])
+    ]);
   }
 
   async fetchSource() {
@@ -22,11 +22,6 @@ class SuperLikes {
 
     // Likeボタンをレイアウト
     this.addLikeButtons(likeButtonCode);
-
-    console.log("svg1");
-
-
-    return svgCode;
   }
 
   async loadSe() {
@@ -34,7 +29,6 @@ class SuperLikes {
       createjs.Sound.alternateExtensions = ["mp3"];
       createjs.Sound.registerSound("mp3/people-people-shout-oo1.mp3", "sound");
       createjs.Sound.on("fileload", () => {
-        console.log("svg2");
         resolve();
       }, this);
     });
