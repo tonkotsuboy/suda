@@ -1,6 +1,0 @@
-{
-  "parser": "postcss-scss",
-  "plugins": {
-    "autoprefixer": {}
-  }
-}
