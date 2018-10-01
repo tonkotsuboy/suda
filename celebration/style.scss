@@ -48,6 +48,16 @@ body {
   //}
 }
 
+.container {
+  display: grid;
+
+  grid-template:
+    "header header"
+    "footer "
+
+}
+
+
 .line-container {
   position: absolute;
 

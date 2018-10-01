@@ -1,0 +1,9 @@
+
+:root {
+  --hoge-fuga: red;
+}
+
+
+div {
+  color: var(--hoge-fuga);
+}

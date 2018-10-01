@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  
+  <style>
+    @font-face {
+      font-family: naguripSubset;
+      src:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/221808/naguripSubset.ttf");
+    }
+  
+    .suda {
+      filter: url("#kaijiFilter");
+      font-size: 60px;
+      font-family: naguripSubset;
+      text-align: center;
+      line-height: 100px;
+    }
+  </style>
+</head>
+<body>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 512 800">
+  <defs>
+    <filter id="kaijiFilter">
+      <feTurbulence id="kaiji" baseFrequency="0.040" seed="2" type="fractalNoise" result="TOP-SPLASH_10"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" scale="4"></feDisplacementMap>
+    </filter>
+  </defs>
+</svg>
+
+<img class="suda" width="500" height="500" src="https://pbs.twimg.com/profile_images/987759631320600577/ZqCQZCGU_400x400.jpg" alt="">
+<p class="suda">ぐにゃぁっ・・・</p>
+
+<script>
+  const feTurbulence = document.querySelector("#kaiji");
+
+//  feTurbulence.setAttribute("baseFrequency", "0");
+
+  let value = 0;
+  let add = 1;
+  
+  let time = 0;
+
+  const render = () => {
+    
+    time += 1;
+    
+    if (time % 5 !== 0) {
+      requestAnimationFrame(render);
+      return;
+    }
+
+    value += add;
+
+    if (value > 30) {
+      add = -1;
+    } else if (value < 0 ) {
+      add = 1;
+    }
+
+    feTurbulence.setAttribute("seed", `${value}`);
+
+    requestAnimationFrame(render);
+  }
+
+  render();
+
+
+  
+</script>
+
+
+</body>
+</html>
