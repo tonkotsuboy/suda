@@ -1,0 +1,14 @@
+{
+  "name": "celebration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "parcel index.html",
+    "build": "parcel build index.html -d ../docs/celebration --public-url ./"
+  },
+  "devDependencies": {
+    "parcel": "^1.10.1",
+    "sass": "^1.14.1"
+  }
+}
